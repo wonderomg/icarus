@@ -1,0 +1,32 @@
+<%- partial('common/head') %>
+<body>
+    <div id="container">
+        <%- partial('common/header') %>
+        <div class="outer">
+            <% if (theme.customize.profile.enabled) { %>
+                <%- partial('common/profile', null, {cache: !config.relative_link}) %>
+            <% } %>
+            <section id="main"><%- body %></section>
+            <% if (theme.customize.sidebar) { %>
+                <%- partial('common/sidebar', null, {cache: !config.relative_link}) %>
+            <% } %>
+        </div>
+        <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+        <%- partial('common/scripts') %>
+    </div>
+    <script type="text/javascript" color="56,183,234" opacity='0.7' zIndex="-2" count="240" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+<script src="js/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; 
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script>
+<script src="js/particles.min.js"></script>
+<script src="https://blog-static.cnblogs.com/files/yjlblog/cursor-effects.js"></script>
+<canvas width="1366" height="662" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+</body>
+</html>
